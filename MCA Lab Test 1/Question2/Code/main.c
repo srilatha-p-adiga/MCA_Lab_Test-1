@@ -10,7 +10,7 @@ int main()
 	  init_pll();               //initialise the pll
 	  init_uart0();             //initilaise the uart0
 	  lcd_init();               //initilaise the lcd
-	  while(1)
+ while(1)
 	{ 
 		 i=0;                     //count that holds number of characters recieved
 		 c=recieve_char_uart0();  //recieve one character
@@ -26,6 +26,6 @@ int main()
 		displayString(&string[0]);         //print the string recv
 		lcd_cmd(0x80);                     //go to line 1
 		delay(10);
-	}
+	 }
      return 0;
 }

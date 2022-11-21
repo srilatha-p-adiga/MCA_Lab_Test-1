@@ -264,8 +264,8 @@ Image Symbol Table
     i.lcd_cmd                                0x0000028c   Section        0  function.o(i.lcd_cmd)
     i.lcd_data                               0x0000030c   Section        0  function.o(i.lcd_data)
     i.lcd_init                               0x0000038c   Section        0  function.o(i.lcd_init)
-    i.main                                   0x000003c0   Section        0  main.o(i.main)
-    i.recieve_char_uart0                     0x0000046c   Section        0  function.o(i.recieve_char_uart0)
+    i.main                                   0x000003c8   Section        0  main.o(i.main)
+    i.recieve_char_uart0                     0x00000474   Section        0  function.o(i.recieve_char_uart0)
     .bss                                     0x40000000   Section       96  libspace.o(.bss)
     HEAP                                     0x40000060   Section        0  startup.o(HEAP)
     STACK                                    0x40000060   Section     1160  startup.o(STACK)
@@ -376,11 +376,11 @@ Image Symbol Table
     init_uart0                               0x00000254   ARM Code      52  function.o(i.init_uart0)
     lcd_cmd                                  0x0000028c   ARM Code     124  function.o(i.lcd_cmd)
     lcd_data                                 0x0000030c   ARM Code     124  function.o(i.lcd_data)
-    lcd_init                                 0x0000038c   ARM Code      52  function.o(i.lcd_init)
-    main                                     0x000003c0   ARM Code     148  main.o(i.main)
-    recieve_char_uart0                       0x0000046c   ARM Code      36  function.o(i.recieve_char_uart0)
-    Region$$Table$$Base                      0x00000494   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x000004a4   Number         0  anon$$obj.o(Region$$Table)
+    lcd_init                                 0x0000038c   ARM Code      60  function.o(i.lcd_init)
+    main                                     0x000003c8   ARM Code     148  main.o(i.main)
+    recieve_char_uart0                       0x00000474   ARM Code      36  function.o(i.recieve_char_uart0)
+    Region$$Table$$Base                      0x0000049c   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x000004ac   Number         0  anon$$obj.o(Region$$Table)
     __libspace_start                         0x40000000   Data          96  libspace.o(.bss)
     __temporary_stack_top$libspace           0x40000060   Data           0  libspace.o(.bss)
 
@@ -392,9 +392,9 @@ Memory Map of the image
 
   Image Entry point : 0x00000000
 
-  Load Region LR_1 (Base: 0x00000000, Size: 0x000004a4, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x00000000, Size: 0x000004ac, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x000004a4, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x000004ac, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -463,18 +463,18 @@ Memory Map of the image
     0x00000254   0x00000254   0x00000038   Code   RO           14    i.init_uart0        function.o
     0x0000028c   0x0000028c   0x00000080   Code   RO           15    i.lcd_cmd           function.o
     0x0000030c   0x0000030c   0x00000080   Code   RO           16    i.lcd_data          function.o
-    0x0000038c   0x0000038c   0x00000034   Code   RO           18    i.lcd_init          function.o
-    0x000003c0   0x000003c0   0x000000ac   Code   RO           75    i.main              main.o
-    0x0000046c   0x0000046c   0x00000028   Code   RO           19    i.recieve_char_uart0  function.o
-    0x00000494   0x00000494   0x00000010   Data   RO          248    Region$$Table       anon$$obj.o
+    0x0000038c   0x0000038c   0x0000003c   Code   RO           18    i.lcd_init          function.o
+    0x000003c8   0x000003c8   0x000000ac   Code   RO           75    i.main              main.o
+    0x00000474   0x00000474   0x00000028   Code   RO           19    i.recieve_char_uart0  function.o
+    0x0000049c   0x0000049c   0x00000010   Data   RO          248    Region$$Table       anon$$obj.o
 
 
-    Execution Region ER_RW (Exec base: 0x40000000, Load base: 0x000004a4, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RW (Exec base: 0x40000000, Load base: 0x000004ac, Size: 0x00000000, Max: 0xffffffff, ABSOLUTE)
 
     **** No section assigned to this execution region ****
 
 
-    Execution Region ER_ZI (Exec base: 0x40000000, Load base: 0x000004a4, Size: 0x000004e8, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_ZI (Exec base: 0x40000000, Load base: 0x000004ac, Size: 0x000004e8, Max: 0xffffffff, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -490,12 +490,12 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       580         24          0          0          0       5361   function.o
-       172         24          0          0          0        583   main.o
+       588         24          0          0          0       5349   function.o
+       172         24          0          0          0        587   main.o
         32         12          0          0       1160        292   startup.o
 
     ----------------------------------------------------------------------
-       784         60         16          0       1160       6236   Object Totals
+       792         60         16          0       1160       6228   Object Totals
          0          0         16          0          0          0   (incl. Generated)
          0          0          0          0          0          0   (incl. Padding)
 
@@ -543,15 +543,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      1172         80         16          0       1256       6376   Grand Totals
-      1172         80         16          0       1256       6376   ELF Image Totals
-      1172         80         16          0          0          0   ROM Totals
+      1180         80         16          0       1256       6368   Grand Totals
+      1180         80         16          0       1256       6368   ELF Image Totals
+      1180         80         16          0          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 1188 (   1.16kB)
+    Total RO  Size (Code + RO Data)                 1196 (   1.17kB)
     Total RW  Size (RW Data + ZI Data)              1256 (   1.23kB)
-    Total ROM Size (Code + RO Data + RW Data)       1188 (   1.16kB)
+    Total ROM Size (Code + RO Data + RW Data)       1196 (   1.17kB)
 
 ==============================================================================
 
